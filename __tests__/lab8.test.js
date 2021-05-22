@@ -31,7 +31,7 @@ describe('Basic user flow for SPA ', () => {
     // implement test3: Clicking on the first journal entry should update the URL to contain “/#entry1”
     await page.click('journal-entry:nth-child(1)');
     
-    expect(page.url()).toContain("#entry1");
+    expect(page.url()).toMatch("#entry1");
 
   }, 300000);
 
@@ -85,7 +85,7 @@ describe('Basic user flow for SPA ', () => {
   it('Test7: Clicking the settings icon, new URL should contain #settings', async () => {
     // implement test7: Clicking on the settings icon should update the URL to contain “/#settings”
     await page.click('header > img');
-    expect(page.url()).toContain("/#settings");
+    expect(page.url()).toMatch("/#settings");
 
   }, 300000);
 
@@ -114,7 +114,7 @@ describe('Basic user flow for SPA ', () => {
     // implement test10: Clicking on the back button should update the URL to contain ‘/#entry1’
     await page.goBack();
 
-    expect(page.url()).toContain("/#entry1");
+    expect(page.url()).toMatch("/#entry1");
   });
 
   // define and implement test11: Clicking the back button once should bring the user back to the home page
@@ -151,7 +151,7 @@ describe('Basic user flow for SPA ', () => {
     // implement test14: Verify the url is correct when clicking on the second entry’
     await page.click('journal-entry:nth-child(2)');
     
-    expect(page.url()).toContain("#entry2");
+    expect(page.url()).toMatch("#entry2");
   });
 
   // define and implement test15: Verify the title is current when clicking on the second entry
@@ -231,7 +231,7 @@ describe('Basic user flow for SPA ', () => {
   // implement test20: Verify the url is correct when clicking on the third entry’
     await page.click('journal-entry:nth-child(3)');
     
-    expect(page.url()).toContain("#entry3");
+    expect(page.url()).toMatch("#entry3");
   }, 300000);
   
 });
